@@ -1,0 +1,29 @@
+{
+  "name": "ng-material-utility-sass",
+  "version": "1.0.0",
+  "description": "Tailwind-esque utility classes for Angular Material.",
+  "main": "ng-material-utility.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx sass material-utility.scss dist/main.css --watch --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azan-n/ng-material-utility.git"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "utility",
+    "classes"
+  ],
+  "author": "https://github.com/azan-n",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azan-n/ng-material-utility/issues"
+  },
+  "homepage": "https://github.com/azan-n/ng-material-utility#readme",
+  "devDependencies": {
+    "sass": "^1.54.5"
+  }
+}

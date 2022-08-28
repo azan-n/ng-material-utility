@@ -4,7 +4,7 @@
   "description": "Tailwind-esque utility classes for Angular Material.",
   "main": "_index.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx sass _index.scss",
     "watch": "npx sass _index.scss dist/main.css --watch --verbose"
   },
   "repository": {

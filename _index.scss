@@ -1,0 +1,96 @@
+@use "sass:map";
+
+/// Angular Material uses $theme object (or map) to store all theming data.
+/// This map contains several maps within them which are defined here by the SASS variable
+/// $color-map-names. If we were to see the map as a JS object it would have the following structure:
+/// 
+/// theme = {
+///     'primary': {
+///                 50: #COLOR_HEX,
+///                 ....
+///                     
+///                 },
+///     'accent': {
+///                 .....
+///                 }
+///     ...   
+/// }
+/// 
+/// The 'background' and 'foreground' maps are predefined when you use functions like
+/// mat.define-dark-theme or mat.define-light-theme.
+
+$color-map-names: 'primary', 'accent', 'warn', 'background', 'foreground';
+
+/// Include background-color, color, text-decoration-color, outline-color, border-color utility classes.
+/// 
+/// @param $theme - Theme object as defined by mat.define-light-theme or mat.define-dark-theme
+@mixin all($theme) {
+    @include background-color($theme);
+    @include color($theme);
+    @include text-decoration-color($theme);
+    @include outline-color($theme);
+    @include border-color($theme);
+}
+
+/// Include background-color utility classes.
+///
+/// @param $theme - Theme object as defined by mat.define-light-theme or mat.define-dark-them
+@mixin background-color($theme) {
+    @include generate-classes('background-color', 'bg', $theme);
+}
+
+/// Include color utility classes.
+///
+/// @param $theme - Theme object as defined by mat.define-light-theme or mat.define-dark-theme
+@mixin color($theme) {
+    @include generate-classes('color', 'text', $theme);
+}
+
+/// Include text-decoration-color utility classes.
+///
+/// @param $theme - Theme object as defined by mat.define-light-theme or mat.define-dark-theme
+@mixin text-decoration-color($theme) {
+    @include generate-classes('text-decoration-color', 'decoration', $theme);
+}
+
+/// Include outline-color utility classes.
+///
+/// @param $theme - Theme object as defined by mat.define-light-theme or mat.define-dark-theme
+@mixin outline-color($theme) {
+    @include generate-classes('outline-color', 'outline', $theme);
+}
+
+/// Include `border-color` utility classes.
+///
+/// @param $theme - Theme object as defined by mat.define-light-theme or mat.define-dark-theme
+@mixin border-color($theme) {
+    @include generate-classes('border-color', 'border', $theme);
+}
+
+/// Generate utility classes for all maps contained within the `$theme` nested-map.
+///
+/// @param $property - CSS property to generate classes for.
+/// @param $suffix - Suffix to give to classes generated. Example 'bg', 'border'.
+/// @param $theme - Theme object as defined by mat.define-light-theme or mat.define-dark-theme
+@mixin generate-classes($property, $suffix, $theme) {
+    @each $color-map-name in $color-map-names {
+
+        @each $map-key,
+        $map-value in map.get($theme, $color-map-name) {
+
+            @if $map-key =='contrast' {
+                /// Do nothing if the contrast map is found.
+                /// All color maps within themes have values with the '-contrast' suffix
+                /// defined for them automatically.
+            }
+
+            @else {
+                .#{$suffix}-#{$color-map-name}-#{$map-key} {
+                    #{$property}: $map-value;
+                }
+            }
+
+        }
+    }
+
+}

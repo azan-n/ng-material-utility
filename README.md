@@ -8,7 +8,7 @@ Example: `bg-accent-500`, `text-primary-200-contrast`
 npm i ng-material-utility
 ```
 
-In your globasl styles.scss, add the mixin `all($theme)` to include all color-based classes supported i.e `background-color`, `color`, `outline-color`, `border-color`, and `text-decoration-color`.
+In your global `styles.scss`, add the mixin `all($theme)` to include all color-based classes supported i.e `background-color`, `color`, `outline-color`, `border-color`, and `text-decoration-color`.
 
 ```scss
 @use 'ng-material-utility' as ng-material-utility;

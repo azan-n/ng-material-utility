@@ -8,7 +8,7 @@ Example: `bg-accent-500`, `text-primary-200-contrast`
 npm i ng-material-utility
 ```
 
-You can use the mixin `all($theme)` to include all color-based classes supported i.e `background-color`, `color`, `outline-color`, `border-color`, and `text-decoration-color`.
+In your globasl styles.scss, add the mixin `all($theme)` to include all color-based classes supported i.e `background-color`, `color`, `outline-color`, `border-color`, and `text-decoration-color`.
 
 ```scss
 @use 'ng-material-utility' as ng-material-utility;
@@ -17,7 +17,7 @@ You can use the mixin `all($theme)` to include all color-based classes supported
 
 @include ng-material-utility.all($theme-var);
 ```
-You can choose to generate only classes that you need using the following functions:
+You can also choose to generate only the classes that you need using the following mixins:
 
 ```scss
 @include ng-material-utility.color($theme-var);

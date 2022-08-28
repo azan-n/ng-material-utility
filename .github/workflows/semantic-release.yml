@@ -13,7 +13,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          fetch-depth: 0
       # Install dependencies.
       - run: npm ci
       # Fails if file contains syntax errors.
@@ -32,4 +31,4 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npx semantic-release
+      - run: npx semantic-release --branches main

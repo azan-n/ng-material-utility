@@ -4,6 +4,10 @@ Example: `bg-accent-500`, `text-primary-200-contrast`
 
 # Usage
 
+```
+npm i ng-material-utility
+```
+
 You can use the mixin `all($theme)` to include all color-based classes supported i.e `background-color`, `color`, `outline-color`, `border-color`, and `text-decoration-color`.
 
 ```scss

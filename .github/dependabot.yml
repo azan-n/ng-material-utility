@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "azan-n"
+    target-branch: "main"
+    commit-message:
+      prefix: "ci(dependabot)"
+      include: "scope"
+

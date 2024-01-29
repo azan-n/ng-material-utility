@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/azan-n/ng-material-utility#readme",
   "devDependencies": {
-    "@commitlint/cli": "^17.1.1",
+    "@commitlint/cli": "^18.6.0",
     "@commitlint/config-conventional": "^17.1.0",
     "husky": "^8.0.1",
     "sass": "^1.54.5",
